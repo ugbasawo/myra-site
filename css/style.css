@@ -1,0 +1,915 @@
+@font-face {
+    font-family: 'playfair_display';
+    src: url('../fonts/playfairdisplay-bold-webfont.eot');
+    src: url('../fonts/playfairdisplay-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-bold-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-bold-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-bold-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-bold-webfont.svg#../fonts/playfair_displaybold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'playfair_display';
+    src: url('../fonts/playfairdisplay-bolditalic-webfont.eot');
+    src: url('../fonts/playfairdisplay-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.svg#../fonts/playfair_displaybold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'playfair_display';
+    src: url('../fonts/playfairdisplay-italic-webfont.eot');
+    src: url('../fonts/playfairdisplay-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-italic-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-italic-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-italic-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-italic-webfont.svg#../fonts/playfair_displayitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'playfair_display';
+    src: url('../fonts/playfairdisplay-regular-webfont.eot');
+    src: url('../fonts/playfairdisplay-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-regular-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-regular-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-regular-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-regular-webfont.svg#../fonts/playfair_displayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('../fonts/raleway-light-webfont.eot');
+    src: url('../fonts/raleway-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light-webfont.woff') format('woff'),
+         url('../fonts/raleway-light-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-light-webfont.svg#../fonts/ralewaylight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('../fonts/raleway-lightitalic-webfont.eot');
+    src: url('../fonts/raleway-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/raleway-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-lightitalic-webfont.svg#../fonts/ralewaylight_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('../fonts/raleway-medium-webfont.eot');
+    src: url('../fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-medium-webfont.woff') format('woff'),
+         url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-medium-webfont.svg#../fonts/ralewaymedium') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('../fonts/raleway-mediumitalic-webfont.eot');
+    src: url('../fonts/raleway-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-mediumitalic-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-mediumitalic-webfont.woff') format('woff'),
+         url('../fonts/raleway-mediumitalic-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-mediumitalic-webfont.svg#../fonts/ralewaymedium_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: white;
+  z-index: 999;
+}
+
+header .container {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.logo {
+  height: 4.2857142857rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+
+.logo h1 {
+  display: none;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.cart-icon {
+  height: 4.2857142857rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.cart-icon img {
+  width: 50%;
+}
+
+nav {
+  width: 90%;
+  padding-left: 1.14rem;
+  padding-right: 1.14rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-order: 3;
+      order: 3;
+}
+
+nav ul {
+  padding: 0;
+  padding-top: 0.75rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  border-top: 1px solid #d7d7d7;
+  color: #e2574c;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+nav li {
+  padding: 0;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+h2, h3 {
+  font-family: 'playfair_display', 'Times New Roman', serif;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 3rem;
+  font-style: italic;
+  text-align: center;
+}
+
+h2 span {
+  font-style: normal;
+  font-weight: bold;
+} 
+
+p {
+  color: #2d2d2d;
+  font-size: 1.3rem;
+  font-family: 'raleway', 'Helvetica', sans-serif;
+  font-weight: normal;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+nav ul, ul.categories, ul.main-carousel, ul.social-media {
+  font-family: 'raleway', 'Times New Roman', serif;
+  list-style-type: none;
+}
+
+li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+}
+
+.screen-reader-text:focus {
+   clip: auto !important;
+   display: block;
+   height: auto;
+   left: 5px;
+   top: 5px;
+   width: auto;
+   z-index: 100000; /* above all content */
+}
+
+#about, #shop, #featured, #updates {
+  border: 0;
+  border-color: transparent;
+  box-shadow: none;
+  outline-style: none;
+}
+
+#about[tabindex="-1"]:focus {
+   outline: 0;
+}
+
+li a:hover {
+  color: #b64036;
+}
+
+.banner {
+  height: 34rem;
+  background:
+    linear-gradient( rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3)),
+    url("../images/banner-girl.png") 50% 165% / 12.5rem no-repeat,
+    url("../images/flower-bkgd.jpg") center / cover no-repeat;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 5px #242424;
+}
+
+.banner div {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.banner p {
+  width: 60%;
+  margin: 0;
+  color: inherit;
+  font-family: 'raleway', 'Helvetica', sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.banner h2 {
+  width: 80%;
+  margin: 0.7142857143rem;
+  color: white;
+  font-size: 3rem;
+  font-style: normal;
+}
+
+#about {
+  height: 21.428571429rem;
+}
+
+.styles {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+.styles h2, .styles p {
+  margin: 0;
+}
+
+.styles::before, .styles::after {
+  height: 0;
+  width: 0;
+  content: '';
+  display: block;
+  overflow: hidden;
+}
+
+.categories {
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 0;
+}
+
+.mens, .trends, .glasses, .sale, .bags, .womens {
+  height: 0;
+  padding-bottom: 26%;
+  padding-top: 24%;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 5px #242424;
+}
+
+.mens, .womens {
+  width: 100%;
+  -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+  border-top: 0.25rem solid white;
+  border-bottom: 0.25rem solid white;
+}
+
+.trends, .glasses, .sale, .bags {
+  width: 50%;
+  -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+  border: 0.25rem solid white;
+
+}
+
+.mens {
+  background-image: url("../images/mens-category.jpg");
+}
+
+.trends {
+  background-image: url("../images/trends-category.jpg");
+  border-left: 0;
+}
+
+.glasses {
+  background-image: url("../images/glasses-category.jpg");
+  border-right: 0;
+}
+
+.sale {
+  background-image: url("../images/sale-category.jpg");
+  border-left: 0;
+}
+
+.bags {
+  background-image: url("../images/bags-category.jpg");
+  border-right: 0;
+}
+
+.womens {
+  background-image: url("../images/womens-category.jpg");
+}
+
+.products {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+.products h2 {
+  margin: 0;
+}
+
+.main-carousel {
+  padding: 0;
+}
+
+.flickity-prev-next-button {
+  display: none;
+}
+
+.flickity-page-dots {
+  bottom: 0;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  position: static;
+}
+
+.carousel-cell {
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  text-align: center;
+}
+
+.carousel-cell img {
+  width: 80%;
+}
+
+.carousel-cell h3 {
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: #e2574c;
+  font-size: 1.75rem;
+}
+
+.carousel-cell p {
+  margin: 0;
+  color: #969696;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.carousel-cell p:last-child {
+  font-size: 1.1rem;
+}
+
+#updates {
+  height: 28.571428571rem;
+  background:
+    linear-gradient( rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3)),
+    url("../images/wave-bkgd.jpg") 50% 100% / 120rem;
+}
+
+.signup {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: white;
+  text-align: center;
+}
+
+.signup h2 {
+  margin: 0;
+  text-shadow: 1px 1px 5px #242424;
+}
+
+.signup p {
+  margin: 0;
+  color: white;
+}
+
+.signup::before, .signup::after {
+  height: 0;
+  width: 0;
+  content: '';
+  display: block;
+  overflow: hidden;
+}
+
+.subscribe {
+  height: 3.2rem;
+  width: 85%;
+  padding: 0.1428571429rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2.1428571429rem;
+  text-align: center;
+}
+
+.subscribe input {
+  height: 100%;
+  width: 60%;
+  margin-left: 1.4285714286rem;
+  border: 0;
+  color: #2d2d2d;
+  font-size: 1rem;
+}
+
+.subscribe input::-webkit-input-placeholder {
+  color: #d7d7d7;
+  font-weight: normal;
+}
+
+.subscribe input::-moz-placeholder {
+  color: #d7d7d7;
+  font-weight: normal;
+}
+
+.subscribe input:-ms-input-placeholder {
+  color: #d7d7d7;
+  font-weight: normal;
+}
+
+.subscribe input:placeholder {
+  color: #d7d7d7;
+  font-weight: normal;
+}
+
+.subscribe input:focus, .subscribe button:focus, .subscribe button:active, .subscribe button:hover {
+  outline-style: none;
+  box-shadow: none;
+  border: 0;
+  border-color: transparent;
+}
+
+.subscribe button {
+  height: 100%;
+  width: 33%;
+  border: 1px solid #e2574c;
+  border-radius: 2.1428571429rem;
+  background-color: #e2574c;
+  color: white;
+  font-size: 1.2rem;
+}
+
+ .contact-details {
+  height: 25rem;
+  margin: 0.5rem 0 0 0;
+  background-color: #242424;
+}
+
+.contact-details .container {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  color: white;
+}
+
+.companyinfo {
+  width: 70%;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.companyinfo p, .companyinfo a:link {
+  color: white;
+  font-family: 'playfair_display', 'Times New Roman', serif;
+  font-size: 1.2142857143rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.companyinfo span {
+  color: #969696;
+}
+
+.social-media {
+  margin: 0;
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  font-size: 1.2rem;
+  line-height: 2.1428571429rem;
+}
+
+.social-media li {
+  margin: 5%;
+}
+
+.social-media span {
+  margin: 0;
+  display: none;
+}
+
+@media all and (min-width: 600px) {
+
+  html {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+  font-size: 1.25rem;
+  }
+
+  header .container {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+
+  .logo {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+
+  .cart-icon {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    -ms-flex-order: 3;
+        order: 3;
+  }
+
+  nav {
+    width: 60%;
+    order: 2;
+  }
+
+  nav ul {
+    align-items: center;
+    border-top: none;
+  }
+
+  nav li {
+    font-size: 1.1rem;
+  }
+
+  .banner {
+    height: 27rem;
+    background:
+      linear-gradient( rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3)),
+      url("../images/banner-girl.png") 50% 168% / 10rem no-repeat,
+      url("../images/flower-bkgd.jpg") center / cover no-repeat;
+  }
+
+  .banner p {
+    width: 60%;
+    font-size: 1.3rem;
+  }
+
+  .banner h2 {
+    width: 100%;
+    font-size: 3.1rem;
+  }
+
+  #about {
+    height: 20rem;
+  }
+
+  .mens, .trends, .glasses, .sale, .bags, .womens {
+    padding-bottom: 15%;
+    padding-top: 12%;
+  }
+
+  .mens, .womens {
+    width: 50%;
+    -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+  }
+
+  .trends, .glasses, .sale, .bags {
+    width: 25%;
+    -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+  }
+
+  .mens, .bags {
+    border-right: 0.25rem solid white;
+  }
+
+  .trends, .womens {
+    border-left: 0.25rem solid white;
+  }
+
+  .products h2 {
+      margin: 3rem;
+  }
+
+  .carousel-cell {
+    width: 50%;
+  }
+
+  .carousel-cell h3 {
+    width: 80%;
+  }
+
+  #updates {
+    height: 26rem;
+    background:
+      linear-gradient( rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3)),
+      url("../images/wave-bkgd.jpg") 50% 100% ;
+  }
+
+  .subscribe {
+    width: 25rem;
+  }
+
+  .subscribe button {
+    font-size: 1rem;
+  }
+
+  .contact-details {
+    height: 19rem;
+  }
+
+  .contact-details .container {
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+
+  .companyinfo {
+    width: 50%;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+  }
+
+  .companyinfo p, .companyinfo a:link {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .social-media {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    font-size: 1.1rem;
+  }
+
+  .social-media li {
+    margin: 0;
+  }
+
+  .fa-fw {
+    width: 2rem;
+  }
+
+  .social-media span {
+    display: inline-block;
+    position: absolute;
+  }
+}  
+
+@media all and (min-width: 1240px) {
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  .logo {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+
+  .logo img {
+    width: 50%;
+  }
+
+  .cart-icon {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    -ms-flex-order: 3;
+        order: 3;
+  }
+
+  .cart-icon img {
+    width: 18%;
+   }
+
+  nav {
+    width: 40%;
+    -ms-flex-order: 2;
+        order: 2;
+  }
+
+  .banner {
+    height: 34rem;
+    background:
+      linear-gradient( rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3)),
+      url("../images/banner-girl.png") 50% -125% / 15rem no-repeat,
+      url("../images/flower-bkgd.jpg") center / contain repeat-x;
+  }
+
+  .banner p {
+    width: 60%;
+    font-size: 1.25rem;
+  }
+
+  .banner h2 {
+    font-size: 3.75rem;
+  }
+
+  #about {
+    height: 15rem;
+  }
+
+  .styles p , .signup p {
+    width: 55%;
+    font-size: 1.1rem;
+  }
+
+  .mens, .trends, .glasses, .sale, .bags, .womens {
+    margin: 0;
+    padding-bottom: 13%;
+    padding-top: 11.5%;
+  }
+
+  .carousel-cell {
+    width: 25%;
+  }
+
+  .carousel-cell h3 {
+    width: 85%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  #updates {
+    height: 22rem;
+  }
+
+  .subscribe {
+    height: 3rem;
+    width: 40%;
+    font-size: 1rem;
+  }
+
+  .subscribe input {
+    width: 70%;
+  }
+
+  .subscribe button {
+    width: 27%;
+  }
+
+  .contact-details {
+    height: 18rem;
+  }
+
+  .companyinfo p, .companyinfo a:link {
+    font-size: 1rem;
+  }
+
+  .social-media {
+    font-size: 1rem;
+    -ms-flex-preferred-size: 15%;
+        flex-basis: 15%;
+  }
+}
